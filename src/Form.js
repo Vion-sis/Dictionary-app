@@ -14,7 +14,7 @@ export default function Form() {
   }
 
   function searchWord() {
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`;
     axios.get(apiUrl).then(showTheWordMeaning);
   }
 
