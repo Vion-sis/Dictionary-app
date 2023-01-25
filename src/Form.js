@@ -10,7 +10,6 @@ export default function Form() {
 
   function showTheWordMeaning(response) {
     setSearchResults(response.data[0]);
-    console.log(response.data[0]);
   }
 
   function searchWord() {
