@@ -1,3 +1,27 @@
 .Results {
   text-align: left;
 }
+
+.Results h2 {
+  text-transform: capitalize;
+}
+.phonetics p{
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.5;
+}
+.phonetics a {
+   background-color: #30d2f2;
+  color: black;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  transition: all 150ms ease-in-outs;
+}
+
+.phonetics a:hover {
+ background-color: #6f8f95;
+ color: aliceblue;
+}
