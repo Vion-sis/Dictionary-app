@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results.js";
+import Photos from "./Photos.js";
 
 import "./Form.css";
 
@@ -8,15 +9,25 @@ export default function Form(props) {
   const [word, setWord] = useState(props.defaultSearch);
   const [searchResults, setSearchResults] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [photos, setPhotos] = useState(null);
 
   function showTheWordMeaning(response) {
     setSearchResults(response.data[0]);
   }
 
+  function handleImageUrl(response) {
+    console.log(response.data.photos);
+    setPhotos(response.data.photos);
+  }
+
   function searchWord() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(showTheWordMeaning);
+
+    const api_key = `SKCts1DL1fHg8mgGeiFvA4wtWxjg7bbOnZHA1siD4lzJgdjOKMjTcTGw`;
+    const header = { headers: { Authorization: `Bearer ${api_key}` } };
+    const api_Url = `https://api.pexels.com/v1/search?query=${word}&per_page=6`;
+    axios.get(api_Url, header).then(handleImageUrl);
   }
   function load() {
     setLoaded(true);
@@ -50,6 +61,7 @@ export default function Form(props) {
           </section>
         </div>
         <Results results={searchResults} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
