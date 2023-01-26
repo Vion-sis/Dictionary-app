@@ -3,13 +3,13 @@ import "./meaning.css";
 
 export default function Meaning(props) {
   return (
-    <div>
+    <div className="meaning">
       <section>
         <h5>{props.meaning.partOfSpeech}</h5>
         {props.meaning.definitions.map(function (definition, index) {
           return (
             <div key={index}>
-              <p className = "meaning"> 
+              <p className = "meaningResults"> 
                 <strong>
                   {index + 1}.
                 </strong>{" "}

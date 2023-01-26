@@ -1,19 +1,19 @@
-.synonym{
+.synonym {
   margin: 5px 10px;
   padding: 0px;
 }
-.synonym li{
-      list-style: none;
-    display: inline-flex;
-    margin-right: 10px;
-    font-size: 15px;
+.synonym li {
+  list-style: none;
+  display: inline-flex;
+  margin-right: 10px;
+  font-size: 15px;
 }
-strong{
-    opacity: 0.5;
+.meaning strong {
+  opacity: 0.5;
 }
-em{
-    opacity: 0.5;
+.meaning em {
+  opacity: 0.5;
 }
-.meaning{
-    margin: 10px;
+.meaningResults {
+  margin: 10px;
 }
